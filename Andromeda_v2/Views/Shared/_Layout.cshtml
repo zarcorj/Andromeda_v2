@@ -1,0 +1,94 @@
+﻿
+<!DOCTYPE HTML>
+
+<html lang="es">
+<head>
+	<title>Proyecto Terminal</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="icon" type="image/png" href="http://www.pngmart.com/files/3/Antenna-PNG-HD.png">
+
+	@Styles.Render("~/Assets/css")
+
+</head>
+<body class="is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<div id="header">
+
+			<!-- Logo -->
+			<h1><a href="index.html" id="logo">Andromeda <em>CDA-IPN</em></a></h1>
+
+			<!-- Nav -->
+			<nav id="nav">
+
+				<ul>
+					<li class="current">
+						@Html.ActionLink("Inicio", "Index", "Home")
+						<ul>
+							<li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+						</ul>
+					</li>
+					<li>
+						<a>Vuelos</a>
+						<ul>
+							<li>@Html.ActionLink("Configuración de vuelos", "Index", "ConfiguracionVuelo")</li>
+							<li>@Html.ActionLink("Vuelos Históricos", "Index", "HistoricoVuelo")</li>
+						</ul>
+					</li>
+					<li>@Html.ActionLink("Panel de visualización", "Index", "VisualizacionVuelo")</li>
+					<li>
+						<a>Administrar</a>
+						<ul>
+							<li>@Html.ActionLink("Instituciones", "Index", "Institucion")</li>
+							<li>@Html.ActionLink("Experimentos", "Index", "Experimento")</li>
+							<li>@Html.ActionLink("Administradores", "Index", "Administrador")</li>
+						</ul>
+					</li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li>@Html.ActionLink("Iniciar sesión", "Inicio_Sesion", "Home")</li>
+					<li>@Html.ActionLink("Registrarse", "Create", "Administrador")</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div class="container body-content">
+		@RenderBody()
+		<hr />
+		<footer style="background-color:floralwhite">
+			<!-- Footer -->
+			<div id="footer">
+
+				<!-- Icons -->
+				<ul class="icons">
+					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+				</ul>
+
+				<!-- Copyright -->
+				<div class="copyright">
+					<ul class="menu">
+						<li>&copy;Andromeda @DateTime.Now.Year</li>
+						<li><a href="#">CDA-IPN</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</footer>
+	</div>
+
+	@Scripts.Render("~/Assets/jquery")
+	@Scripts.Render("~/Assets/bootstrap")
+	@Scripts.Render("~/Assets/utils")
+	@Scripts.Render("~/Assets/tables")
+	@RenderSection("scripts", required: false)
+
+</body>
+
+</html>

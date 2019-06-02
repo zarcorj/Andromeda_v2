@@ -1,0 +1,333 @@
+﻿
+@{
+	ViewBag.Title = "PanelVisualizacion";
+}
+
+<h2>PanelVisualizacion</h2>
+
+<div class="container">
+	<div class="row">
+		<div class="col-6">
+			<!-- Gráfica de Temperatura -->
+			<div id="Temperatura" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+		</div>
+		<div class="col-6">
+			<!-- Gráfica de Humedad -->
+			<div id="Humedad" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-6">
+			<!-- Gráfica de Batería -->
+			<div id="Bateria" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+		</div>
+		<div class="col-6">
+			<!-- Gráfica de IMU -->
+			<div id="IMU" style="height: 400px; width: 100%;"></div>
+		</div>
+	</div>
+</div>
+
+
+@Scripts.Render("~/Assets/graphs/canvas")
+@Scripts.Render("~/Assets/graphs/highcharts")
+
+<script type="text/javascript">
+	Highcharts.chart('Temperatura', {
+		chart: {
+			type: 'line'
+		},
+		title: {
+			text: 'Temperatura en vuelo'
+		},
+		subtitle: {
+			text: 'Fuente: CDA-IPN'
+		},
+		xAxis: {
+			title: {
+				text: 'Tiempo (Intervalos 30min)'
+			}
+		},
+		yAxis: {
+			title: {
+				text: 'Temperatura (°C)'
+			}
+		},
+		plotOptions: {
+			line: {
+				dataLabels: {
+					enabled: false
+				},
+				enableMouseTracking: true
+			}
+		},
+		series: [{
+			name: 'Interna',
+			data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+		}, {
+			name: 'Externa',
+			data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+		}]
+	});
+</script>
+<script type="text/javascript">
+	Highcharts.chart('Humedad', {
+		chart: {
+			type: 'line'
+		},
+		title: {
+			text: 'Humedad en vuelo'
+		},
+		subtitle: {
+			text: 'Fuente: CDA-IPN'
+		},
+		xAxis: {
+			title: {
+				text: 'Tiempo (Intervalos 30min)'
+			}
+		},
+		yAxis: {
+			title: {
+				text: 'Humedad'
+			}
+		},
+		plotOptions: {
+			line: {
+				dataLabels: {
+					enabled: true
+				},
+				enableMouseTracking: true
+			}
+		},
+		series: [{
+			name: 'Húmedad interna',
+			data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+		}]
+	});
+</script>
+<script type="text/javascript">
+	Highcharts.chart('Bateria', {
+		chart: {
+			scrollablePlotArea: {
+				minWidth: 700
+			}
+		},
+
+		data: {
+			csvURL: 'https://cdn.rawgit.com/highcharts/highcharts/' +
+				'057b672172ccc6c08fe7dbb27fc17ebca3f5b770/samples/data/analytics.csv',
+			beforeParse: function (csv) {
+				return csv.replace(/\n\n/g, '\n');
+			}
+		},
+
+		title: {
+			text: 'Bateria de Sistema de comunicación'
+		},
+
+		subtitle: {
+			text: 'Fuente: CDA-IPN'
+		},
+
+		xAxis: {
+			tickInterval: 7 * 24 * 3600 * 1000, // one week
+			tickWidth: 0,
+			gridLineWidth: 1,
+			labels: {
+				align: 'left',
+				x: 3,
+				y: -3
+			}
+		},
+
+		yAxis: [{ // left y axis
+			title: {
+				text: null
+			},
+			labels: {
+				align: 'left',
+				x: 3,
+				y: 16,
+				format: '{value:.,0f}'
+			},
+			showFirstLabel: false
+		}, { // right y axis
+			linkedTo: 0,
+			gridLineWidth: 0,
+			opposite: true,
+			title: {
+				text: null
+			},
+			labels: {
+				align: 'right',
+				x: -3,
+				y: 16,
+				format: '{value:.,0f}'
+			},
+			showFirstLabel: false
+		}],
+
+		legend: {
+			align: 'left',
+			verticalAlign: 'top',
+			borderWidth: 0
+		},
+
+		tooltip: {
+			shared: true,
+			crosshairs: true
+		},
+
+		plotOptions: {
+			series: {
+				cursor: 'pointer',
+				point: {
+					events: {
+						click: function (e) {
+							hs.htmlExpand(null, {
+								pageOrigin: {
+									x: e.pageX || e.clientX,
+									y: e.pageY || e.clientY
+								},
+								headingText: this.series.name,
+								maincontentText: Highcharts.dateFormat('%A, %b %e, %Y', this.x) + ':<br/> ' +
+									this.y + ' sessions',
+								width: 200
+							});
+						}
+					}
+				},
+				marker: {
+					lineWidth: 1
+				}
+			}
+		},
+
+		series: [{
+			name: 'All sessions',
+			lineWidth: 4,
+			marker: {
+				radius: 4
+			}
+		}, {
+			name: 'New users'
+		}]
+	});
+</script>
+<script>
+	// IMU
+	window.onload = function () {
+		var chart = new CanvasJS.Chart("IMU", {
+			title: {
+				text: "IMU de plataforma"
+			},
+			axisY: [{
+				title: "Acelerómetro",
+				lineColor: "#C24642",
+				tickColor: "#C24642",
+				labelFontColor: "#C24642",
+				titleFontColor: "#C24642",
+				suffix: "k"
+			},
+			{
+				title: "Magnetómetro",
+				lineColor: "#369EAD",
+				tickColor: "#369EAD",
+				labelFontColor: "#369EAD",
+				titleFontColor: "#369EAD",
+				suffix: "k"
+			}],
+			axisY2: {
+				title: "Otro",
+				lineColor: "#7F6084",
+				tickColor: "#7F6084",
+				labelFontColor: "#7F6084",
+				titleFontColor: "#7F6084",
+				prefix: "$",
+				suffix: "k"
+			},
+			toolTip: {
+				shared: true
+			},
+			legend: {
+				cursor: "pointer",
+				itemclick: toggleDataSeries
+			},
+			data: [{
+				type: "line",
+				name: "Magnetómetro",
+				color: "#369EAD",
+				showInLegend: true,
+				axisYIndex: 1,
+				dataPoints: [
+					{ x: new Date(2017, 00, 7), y: 85.4 },
+					{ x: new Date(2017, 00, 14), y: 92.7 },
+					{ x: new Date(2017, 00, 21), y: 64.9 },
+					{ x: new Date(2017, 00, 28), y: 58.0 },
+					{ x: new Date(2017, 01, 4), y: 63.4 },
+					{ x: new Date(2017, 01, 11), y: 69.9 },
+					{ x: new Date(2017, 01, 18), y: 88.9 },
+					{ x: new Date(2017, 01, 25), y: 66.3 },
+					{ x: new Date(2017, 02, 4), y: 82.7 },
+					{ x: new Date(2017, 02, 11), y: 60.2 },
+					{ x: new Date(2017, 02, 18), y: 87.3 },
+					{ x: new Date(2017, 02, 25), y: 98.5 }
+				]
+			},
+			{
+				type: "line",
+				name: "Aceletómetro",
+				color: "#C24642",
+				axisYIndex: 0,
+				showInLegend: true,
+				dataPoints: [
+					{ x: new Date(2017, 00, 7), y: 32.3 },
+					{ x: new Date(2017, 00, 14), y: 33.9 },
+					{ x: new Date(2017, 00, 21), y: 26.0 },
+					{ x: new Date(2017, 00, 28), y: 15.8 },
+					{ x: new Date(2017, 01, 4), y: 18.6 },
+					{ x: new Date(2017, 01, 11), y: 34.6 },
+					{ x: new Date(2017, 01, 18), y: 37.7 },
+					{ x: new Date(2017, 01, 25), y: 24.7 },
+					{ x: new Date(2017, 02, 4), y: 35.9 },
+					{ x: new Date(2017, 02, 11), y: 12.8 },
+					{ x: new Date(2017, 02, 18), y: 38.1 },
+					{ x: new Date(2017, 02, 25), y: 42.4 }
+				]
+			},
+			{
+				type: "line",
+				name: "Otro",
+				color: "#7F6084",
+				axisYType: "secondary",
+				showInLegend: true,
+				dataPoints: [
+					{ x: new Date(2017, 00, 7), y: 42.5 },
+					{ x: new Date(2017, 00, 14), y: 44.3 },
+					{ x: new Date(2017, 00, 21), y: 28.7 },
+					{ x: new Date(2017, 00, 28), y: 22.5 },
+					{ x: new Date(2017, 01, 4), y: 25.6 },
+					{ x: new Date(2017, 01, 11), y: 45.7 },
+					{ x: new Date(2017, 01, 18), y: 54.6 },
+					{ x: new Date(2017, 01, 25), y: 32.0 },
+					{ x: new Date(2017, 02, 4), y: 43.9 },
+					{ x: new Date(2017, 02, 11), y: 26.4 },
+					{ x: new Date(2017, 02, 18), y: 40.3 },
+					{ x: new Date(2017, 02, 25), y: 54.2 }
+				]
+			}]
+		});
+		chart.render();
+
+		function toggleDataSeries(e) {
+			if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+				e.dataSeries.visible = false;
+			} else {
+				e.dataSeries.visible = true;
+			}
+			e.chart.render();
+		}
+
+	}
+</script>

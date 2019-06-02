@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Andromeda_v2.Models.Institucion>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Instituciones</h2>
+
+<p>
+	<a href="/Institucion/Create" class="btn btn-success">Crear Institución</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.InstitucionID }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.InstitucionID }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.InstitucionID })
+        </td>
+    </tr>
+}
+
+</table>

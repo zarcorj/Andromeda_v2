@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Andromeda_v2", "Andromeda_v2\Andromeda_v2.csproj", "{473E528A-7F68-4BD3-9732-7697CDAC7EFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Andromeda", "Andromeda\Andromeda.csproj", "{1BB56E80-3A7A-4050-8BCC-BD7AEFECE920}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{473E528A-7F68-4BD3-9732-7697CDAC7EFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{473E528A-7F68-4BD3-9732-7697CDAC7EFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{473E528A-7F68-4BD3-9732-7697CDAC7EFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{473E528A-7F68-4BD3-9732-7697CDAC7EFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BB56E80-3A7A-4050-8BCC-BD7AEFECE920}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BB56E80-3A7A-4050-8BCC-BD7AEFECE920}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BB56E80-3A7A-4050-8BCC-BD7AEFECE920}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BB56E80-3A7A-4050-8BCC-BD7AEFECE920}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7ACF4A30-ABDD-4537-93BA-0D5405CA5276}
+	EndGlobalSection
+EndGlobal

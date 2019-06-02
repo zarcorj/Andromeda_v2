@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Andromeda_v2.Models.Administrador>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Administradores</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contraseña)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lugar_trabajo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nivel)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contraseña)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lugar_trabajo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nivel)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AdministradorID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AdministradorID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AdministradorID })
+        </td>
+    </tr>
+}
+
+</table>

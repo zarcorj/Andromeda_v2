@@ -1,0 +1,42 @@
+﻿@model Andromeda_v2.Models.VueloInstitucionExperimento
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>VueloInstitucionExperimento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Experimento.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Experimento.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Institucion.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Institucion.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vuelo.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vuelo.Nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

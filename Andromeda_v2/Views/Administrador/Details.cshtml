@@ -1,0 +1,58 @@
+﻿@model Andromeda_v2.Models.Administrador
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles de admnistrador</h2>
+
+<div>
+    <h4>Administrador</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contraseña)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contraseña)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lugar_trabajo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lugar_trabajo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nivel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nivel)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AdministradorID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,65 @@
+﻿@model Andromeda_v2.Models.VueloInstitucionExperimento
+
+
+<h2>Detalles de vuelo histórico</h2>
+
+<div class="container">
+	<div class="card mb-12 box-shadow">
+		<div class="card-body">
+			<hr />
+			<div class="form-group row">
+				<label for="Administradores" class="col-sm-2 col-form-label">Administrador</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="Email" name="Email" value="@Model.Vuelo.Administrador.Email" disabled>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="" class="col-sm-2 col-form-label">Nombre</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="Nombre" name="Nombre" value="@Model.Vuelo.Nombre" disabled>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="ObjetivoDeVuelo" class="col-sm-2 col-form-label">Objetivo</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="Objetivo" name="Objetivo" value="@Model.Vuelo.Objetivo" disabled>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="Ubicacion" class="col-sm-2 col-form-label">Ubicación</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="Ubicacion" name="Ubicacion" value="@Model.Vuelo.Ubicacion" disabled>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="fecha" class="col-sm-2 col-form-label">Fecha</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="Fecha" name="Fecha" value="@Model.Vuelo.Fecha" disabled>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="plataformaVuelo" class="col-sm-2 col-form-label">Plataforma</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="Plataforma" name="Plataforma" value="@Model.Vuelo.Plataforma" disabled>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="instituciones" class="col-sm-2 col-form-label">Institución</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="Institucion" name="Institucion" value="@Model.Institucion.Nombre" disabled>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="experimentos" class="col-sm-2 col-form-label">Experimento</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="Experimento" name="Experimento" value="@Model.Experimento.Nombre" disabled>
+				</div>
+			</div>
+			<hr/>
+			<div style="text-align:center">
+				@Html.ActionLink("Regresar a listado", "Index")
+			</div>
+		</div>
+	</div>
+</div>
+

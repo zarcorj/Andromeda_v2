@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Andromeda_v2.Models.VueloInstitucionExperimento>
+
+@{
+	Layout = null;
+}
+
+
+@foreach (var vueloC in Model)
+{
+<div>
+	<span>@vueloC.Vuelo.Nombre</span>
+	<span>@vueloC.Vuelo.Ubicacion</span>
+	<span>@vueloC.Vuelo.Plataforma</span>
+	<span>@vueloC.Vuelo.Fecha</span>
+	<span>@vueloC.Experimento</span>
+	<span>@vueloC.Institucion</span>
+</div>
+}

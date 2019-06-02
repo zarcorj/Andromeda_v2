@@ -1,0 +1,1153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.9.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.9.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{473E528A-7F68-4BD3-9732-7697CDAC7EFB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Andromeda_v2</RootNamespace>
+    <AssemblyName>Andromeda_v2</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.7.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.7.2\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.7.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.7.2\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.7.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.7.2\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.7.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.7.2\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.7.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.7.2\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.7.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.7.2\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.4\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.6\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.6\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.6\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.6\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AdministradorController.cs" />
+    <Compile Include="Controllers\ConfiguracionVueloController.cs" />
+    <Compile Include="Controllers\ExperimentoController.cs" />
+    <Compile Include="Controllers\HistoricoVueloController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InstitucionController.cs" />
+    <Compile Include="Controllers\VisualizacionVueloController.cs" />
+    <Compile Include="Controllers\TelemetriaController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\VueloController.cs" />
+    <Compile Include="Controllers\VueloInstitucionExperimentoController.cs" />
+    <Compile Include="DAL\AndromedaContext.cs" />
+    <Compile Include="DAL\AndromedaInitializer.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809260239201_InitialCreate.cs" />
+    <Compile Include="Migrations\201809260239201_InitialCreate.Designer.cs">
+      <DependentUpon>201809260239201_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Administrador.cs" />
+    <Compile Include="Models\Experimento.cs" />
+    <Compile Include="Models\Institucion.cs" />
+    <Compile Include="Models\Telemetria.cs" />
+    <Compile Include="Models\Vuelo.cs" />
+    <Compile Include="Models\VueloInstitucionExperimento.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\activity.svg" />
+    <Content Include="Assets\css\bootstrap-grid.css" />
+    <Content Include="Assets\css\bootstrap-grid.min.css" />
+    <Content Include="Assets\css\bootstrap-reboot.css" />
+    <Content Include="Assets\css\bootstrap-reboot.min.css" />
+    <Content Include="Assets\css\bootstrap.css" />
+    <Content Include="Assets\css\bootstrap.min.css" />
+    <Content Include="Assets\css\font-awesome.min.css" />
+    <Content Include="Assets\css\images\bg01.png" />
+    <Content Include="Assets\css\images\bg02.png" />
+    <Content Include="Assets\css\images\bg03.png" />
+    <Content Include="Assets\css\mainIndex.css" />
+    <Content Include="Assets\css\signin.css" />
+    <Content Include="Assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="Assets\graphs\css\highcharts.css" />
+    <Content Include="Assets\graphs\css\themes\dark-unica.css" />
+    <Content Include="Assets\graphs\css\themes\grid-light.css" />
+    <Content Include="Assets\graphs\css\themes\sand-signika.css" />
+    <Content Include="Assets\graphs\es-modules\error.js" />
+    <Content Include="Assets\graphs\es-modules\masters\highcharts-3d.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\highcharts-more.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\highcharts.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\accessibility.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\annotations.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\boost-canvas.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\boost.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\broken-axis.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\bullet.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\data.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\drag-panes.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\drilldown.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\export-data.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\exporting.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\funnel.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\gantt.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\grid-axis.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\heatmap.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\histogram-bellcurve.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\item-series.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\no-data-to-display.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\offline-exporting.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\oldie.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\overlapping-datalabels.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\parallel-coordinates.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\pareto.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\pattern-fill.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\sankey.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\series-label.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\solid-gauge.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\static-scale.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\stock.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\streamgraph.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\sunburst.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\tilemap.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\treemap.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\variable-pie.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\variwide.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\vector.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\windbarb.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\wordcloud.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\modules\xrange.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\themes\avocado.js" />
+    <Content Include="Assets\graphs\es-modules\masters\themes\avocado.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\themes\dark-blue.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\themes\dark-green.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\themes\dark-unica.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\themes\gray.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\themes\grid-light.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\themes\grid.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\themes\sand-signika.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\themes\skies.src.js" />
+    <Content Include="Assets\graphs\es-modules\masters\themes\sunset.js" />
+    <Content Include="Assets\graphs\es-modules\masters\themes\sunset.src.js" />
+    <Content Include="Assets\graphs\es-modules\mixins\ajax.js" />
+    <Content Include="Assets\graphs\es-modules\mixins\centered-series.js" />
+    <Content Include="Assets\graphs\es-modules\mixins\derived-series.js" />
+    <Content Include="Assets\graphs\es-modules\mixins\draw-point.js" />
+    <Content Include="Assets\graphs\es-modules\mixins\on-series.js" />
+    <Content Include="Assets\graphs\es-modules\mixins\polygon.js" />
+    <Content Include="Assets\graphs\es-modules\mixins\tree-series.js" />
+    <Content Include="Assets\graphs\es-modules\modules\a11y-i18n.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\annotations.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\bellcurve.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\boost-canvas.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\boost.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\broken-axis.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\bullet.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\data.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\drag-panes.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\drilldown.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\export-data.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\exporting.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\funnel.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\histogram.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\item-series.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\keyboard-navigation.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\no-data-to-display.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\offline-exporting.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\oldie.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\overlapping-datalabels.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\parallel-coordinates.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\pareto.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\pattern-fill.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\sankey.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\screen-reader.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\series-label.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\solid-gauge.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\static-scale.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\streamgraph.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\sunburst.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\tilemap.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\treemap.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\variable-pie.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\variwide.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\vector.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\windbarb.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\wordcloud.src.js" />
+    <Content Include="Assets\graphs\es-modules\modules\xrange.src.js" />
+    <Content Include="Assets\graphs\es-modules\parts-3d\Axis.js" />
+    <Content Include="Assets\graphs\es-modules\parts-3d\Chart.js" />
+    <Content Include="Assets\graphs\es-modules\parts-3d\Column.js" />
+    <Content Include="Assets\graphs\es-modules\parts-3d\Globals.js" />
+    <Content Include="Assets\graphs\es-modules\parts-3d\Math.js" />
+    <Content Include="Assets\graphs\es-modules\parts-3d\Pie.js" />
+    <Content Include="Assets\graphs\es-modules\parts-3d\Scatter.js" />
+    <Content Include="Assets\graphs\es-modules\parts-3d\Series.js" />
+    <Content Include="Assets\graphs\es-modules\parts-3d\SVGRenderer.js" />
+    <Content Include="Assets\graphs\es-modules\parts-3d\VMLRenderer.js" />
+    <Content Include="Assets\graphs\es-modules\parts-gantt\gantt.js" />
+    <Content Include="Assets\graphs\es-modules\parts-gantt\grid-axis.js" />
+    <Content Include="Assets\graphs\es-modules\parts-map\ColorAxis.js" />
+    <Content Include="Assets\graphs\es-modules\parts-map\ColorSeriesMixin.js" />
+    <Content Include="Assets\graphs\es-modules\parts-map\GeoJSON.js" />
+    <Content Include="Assets\graphs\es-modules\parts-map\HeatmapSeries.js" />
+    <Content Include="Assets\graphs\es-modules\parts-map\Map.js" />
+    <Content Include="Assets\graphs\es-modules\parts-map\MapAxis.js" />
+    <Content Include="Assets\graphs\es-modules\parts-map\MapBubbleSeries.js" />
+    <Content Include="Assets\graphs\es-modules\parts-map\MapLineSeries.js" />
+    <Content Include="Assets\graphs\es-modules\parts-map\MapNavigation.js" />
+    <Content Include="Assets\graphs\es-modules\parts-map\MapPointer.js" />
+    <Content Include="Assets\graphs\es-modules\parts-map\MapPointSeries.js" />
+    <Content Include="Assets\graphs\es-modules\parts-map\MapSeries.js" />
+    <Content Include="Assets\graphs\es-modules\parts-more\AreaRangeSeries.js" />
+    <Content Include="Assets\graphs\es-modules\parts-more\AreaSplineRangeSeries.js" />
+    <Content Include="Assets\graphs\es-modules\parts-more\BoxPlotSeries.js" />
+    <Content Include="Assets\graphs\es-modules\parts-more\BubbleSeries.js" />
+    <Content Include="Assets\graphs\es-modules\parts-more\ColumnRangeSeries.js" />
+    <Content Include="Assets\graphs\es-modules\parts-more\ErrorBarSeries.js" />
+    <Content Include="Assets\graphs\es-modules\parts-more\GaugeSeries.js" />
+    <Content Include="Assets\graphs\es-modules\parts-more\Pane.js" />
+    <Content Include="Assets\graphs\es-modules\parts-more\Polar.js" />
+    <Content Include="Assets\graphs\es-modules\parts-more\PolygonSeries.js" />
+    <Content Include="Assets\graphs\es-modules\parts-more\RadialAxis.js" />
+    <Content Include="Assets\graphs\es-modules\parts-more\WaterfallSeries.js" />
+    <Content Include="Assets\graphs\es-modules\parts.js" />
+    <Content Include="Assets\graphs\es-modules\parts\AreaSeries.js" />
+    <Content Include="Assets\graphs\es-modules\parts\AreaSplineSeries.js" />
+    <Content Include="Assets\graphs\es-modules\parts\Axis.js" />
+    <Content Include="Assets\graphs\es-modules\parts\BarSeries.js" />
+    <Content Include="Assets\graphs\es-modules\parts\CandlestickSeries.js" />
+    <Content Include="Assets\graphs\es-modules\parts\Chart.js" />
+    <Content Include="Assets\graphs\es-modules\parts\Color.js" />
+    <Content Include="Assets\graphs\es-modules\parts\ColumnSeries.js" />
+    <Content Include="Assets\graphs\es-modules\parts\DataGrouping.js" />
+    <Content Include="Assets\graphs\es-modules\parts\DataLabels.js" />
+    <Content Include="Assets\graphs\es-modules\parts\DateTimeAxis.js" />
+    <Content Include="Assets\graphs\es-modules\parts\Dynamics.js" />
+    <Content Include="Assets\graphs\es-modules\parts\FlagsSeries.js" />
+    <Content Include="Assets\graphs\es-modules\parts\Globals.js" />
+    <Content Include="Assets\graphs\es-modules\parts\Html.js" />
+    <Content Include="Assets\graphs\es-modules\parts\Interaction.js" />
+    <Content Include="Assets\graphs\es-modules\parts\Legend.js" />
+    <Content Include="Assets\graphs\es-modules\parts\LogarithmicAxis.js" />
+    <Content Include="Assets\graphs\es-modules\parts\MSPointer.js" />
+    <Content Include="Assets\graphs\es-modules\parts\Navigator.js" />
+    <Content Include="Assets\graphs\es-modules\parts\OHLCSeries.js" />
+    <Content Include="Assets\graphs\es-modules\parts\Options.js" />
+    <Content Include="Assets\graphs\es-modules\parts\OrdinalAxis.js" />
+    <Content Include="Assets\graphs\es-modules\parts\PieSeries.js" />
+    <Content Include="Assets\graphs\es-modules\parts\PlotBandSeries.experimental.js" />
+    <Content Include="Assets\graphs\es-modules\parts\PlotLineOrBand.js" />
+    <Content Include="Assets\graphs\es-modules\parts\Point.js" />
+    <Content Include="Assets\graphs\es-modules\parts\Pointer.js" />
+    <Content Include="Assets\graphs\es-modules\parts\RangeSelector.js" />
+    <Content Include="Assets\graphs\es-modules\parts\Responsive.js" />
+    <Content Include="Assets\graphs\es-modules\parts\ScatterSeries.js" />
+    <Content Include="Assets\graphs\es-modules\parts\ScrollablePlotArea.js" />
+    <Content Include="Assets\graphs\es-modules\parts\Scrollbar.js" />
+    <Content Include="Assets\graphs\es-modules\parts\Series.js" />
+    <Content Include="Assets\graphs\es-modules\parts\SplineSeries.js" />
+    <Content Include="Assets\graphs\es-modules\parts\Stacking.js" />
+    <Content Include="Assets\graphs\es-modules\parts\StockChart.js" />
+    <Content Include="Assets\graphs\es-modules\parts\SvgRenderer.js" />
+    <Content Include="Assets\graphs\es-modules\parts\Tick.js" />
+    <Content Include="Assets\graphs\es-modules\parts\Time.js" />
+    <Content Include="Assets\graphs\es-modules\parts\Tooltip.js" />
+    <Content Include="Assets\graphs\es-modules\parts\TouchPointer.js" />
+    <Content Include="Assets\graphs\es-modules\parts\Utilities.js" />
+    <Content Include="Assets\graphs\es-modules\themes\avocado.js" />
+    <Content Include="Assets\graphs\es-modules\themes\dark-blue.js" />
+    <Content Include="Assets\graphs\es-modules\themes\dark-green.js" />
+    <Content Include="Assets\graphs\es-modules\themes\dark-unica.js" />
+    <Content Include="Assets\graphs\es-modules\themes\gray.js" />
+    <Content Include="Assets\graphs\es-modules\themes\grid-light.js" />
+    <Content Include="Assets\graphs\es-modules\themes\grid.js" />
+    <Content Include="Assets\graphs\es-modules\themes\sand-signika.js" />
+    <Content Include="Assets\graphs\es-modules\themes\skies.js" />
+    <Content Include="Assets\graphs\es-modules\themes\sunset.js" />
+    <Content Include="Assets\graphs\highcharts-3d.js" />
+    <Content Include="Assets\graphs\highcharts-3d.src.js" />
+    <Content Include="Assets\graphs\highcharts-more.js" />
+    <Content Include="Assets\graphs\highcharts-more.src.js" />
+    <Content Include="Assets\graphs\highcharts.js" />
+    <Content Include="Assets\graphs\highcharts.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\error.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\highcharts-3d.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\highcharts-more.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\highcharts.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\accessibility.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\annotations.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\boost-canvas.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\boost.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\broken-axis.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\bullet.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\data.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\drag-panes.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\drilldown.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\export-data.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\exporting.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\funnel.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\gantt.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\grid-axis.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\heatmap.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\histogram-bellcurve.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\item-series.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\no-data-to-display.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\offline-exporting.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\oldie.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\overlapping-datalabels.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\parallel-coordinates.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\pareto.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\pattern-fill.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\sankey.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\series-label.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\solid-gauge.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\static-scale.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\stock.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\streamgraph.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\sunburst.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\tilemap.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\treemap.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\variable-pie.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\variwide.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\vector.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\windbarb.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\wordcloud.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\modules\xrange.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\themes\avocado.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\themes\avocado.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\themes\dark-blue.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\themes\dark-green.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\themes\dark-unica.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\themes\gray.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\themes\grid-light.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\themes\grid.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\themes\sand-signika.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\themes\skies.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\themes\sunset.js" />
+    <Content Include="Assets\graphs\js\es-modules\masters\themes\sunset.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\mixins\ajax.js" />
+    <Content Include="Assets\graphs\js\es-modules\mixins\centered-series.js" />
+    <Content Include="Assets\graphs\js\es-modules\mixins\derived-series.js" />
+    <Content Include="Assets\graphs\js\es-modules\mixins\draw-point.js" />
+    <Content Include="Assets\graphs\js\es-modules\mixins\on-series.js" />
+    <Content Include="Assets\graphs\js\es-modules\mixins\polygon.js" />
+    <Content Include="Assets\graphs\js\es-modules\mixins\tree-series.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\a11y-i18n.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\annotations.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\bellcurve.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\boost-canvas.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\boost.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\broken-axis.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\bullet.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\data.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\drag-panes.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\drilldown.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\export-data.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\exporting.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\funnel.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\histogram.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\item-series.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\keyboard-navigation.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\no-data-to-display.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\offline-exporting.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\oldie.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\overlapping-datalabels.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\parallel-coordinates.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\pareto.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\pattern-fill.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\sankey.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\screen-reader.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\series-label.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\solid-gauge.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\static-scale.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\streamgraph.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\sunburst.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\tilemap.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\treemap.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\variable-pie.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\variwide.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\vector.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\windbarb.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\wordcloud.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\modules\xrange.src.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-3d\Axis.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-3d\Chart.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-3d\Column.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-3d\Globals.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-3d\Math.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-3d\Pie.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-3d\Scatter.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-3d\Series.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-3d\SVGRenderer.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-3d\VMLRenderer.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-gantt\gantt.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-gantt\grid-axis.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-map\ColorAxis.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-map\ColorSeriesMixin.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-map\GeoJSON.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-map\HeatmapSeries.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-map\Map.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-map\MapAxis.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-map\MapBubbleSeries.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-map\MapLineSeries.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-map\MapNavigation.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-map\MapPointer.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-map\MapPointSeries.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-map\MapSeries.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-more\AreaRangeSeries.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-more\AreaSplineRangeSeries.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-more\BoxPlotSeries.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-more\BubbleSeries.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-more\ColumnRangeSeries.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-more\ErrorBarSeries.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-more\GaugeSeries.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-more\Pane.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-more\Polar.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-more\PolygonSeries.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-more\RadialAxis.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts-more\WaterfallSeries.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\AreaSeries.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\AreaSplineSeries.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\Axis.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\BarSeries.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\CandlestickSeries.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\Chart.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\Color.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\ColumnSeries.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\DataGrouping.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\DataLabels.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\DateTimeAxis.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\Dynamics.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\FlagsSeries.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\Globals.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\Html.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\Interaction.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\Legend.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\LogarithmicAxis.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\MSPointer.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\Navigator.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\OHLCSeries.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\Options.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\OrdinalAxis.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\PieSeries.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\PlotBandSeries.experimental.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\PlotLineOrBand.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\Point.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\Pointer.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\RangeSelector.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\Responsive.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\ScatterSeries.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\ScrollablePlotArea.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\Scrollbar.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\Series.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\SplineSeries.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\Stacking.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\StockChart.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\SvgRenderer.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\Tick.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\Time.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\Tooltip.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\TouchPointer.js" />
+    <Content Include="Assets\graphs\js\es-modules\parts\Utilities.js" />
+    <Content Include="Assets\graphs\js\es-modules\themes\avocado.js" />
+    <Content Include="Assets\graphs\js\es-modules\themes\dark-blue.js" />
+    <Content Include="Assets\graphs\js\es-modules\themes\dark-green.js" />
+    <Content Include="Assets\graphs\js\es-modules\themes\dark-unica.js" />
+    <Content Include="Assets\graphs\js\es-modules\themes\gray.js" />
+    <Content Include="Assets\graphs\js\es-modules\themes\grid-light.js" />
+    <Content Include="Assets\graphs\js\es-modules\themes\grid.js" />
+    <Content Include="Assets\graphs\js\es-modules\themes\sand-signika.js" />
+    <Content Include="Assets\graphs\js\es-modules\themes\skies.js" />
+    <Content Include="Assets\graphs\js\es-modules\themes\sunset.js" />
+    <Content Include="Assets\graphs\js\highcharts-3d.js" />
+    <Content Include="Assets\graphs\js\highcharts-3d.src.js" />
+    <Content Include="Assets\graphs\js\highcharts-more.js" />
+    <Content Include="Assets\graphs\js\highcharts-more.src.js" />
+    <Content Include="Assets\graphs\js\highcharts.js" />
+    <Content Include="Assets\graphs\js\highcharts.src.js" />
+    <Content Include="Assets\graphs\js\modules\accessibility.js" />
+    <Content Include="Assets\graphs\js\modules\accessibility.src.js" />
+    <Content Include="Assets\graphs\js\modules\annotations.js" />
+    <Content Include="Assets\graphs\js\modules\annotations.src.js" />
+    <Content Include="Assets\graphs\js\modules\boost-canvas.js" />
+    <Content Include="Assets\graphs\js\modules\boost-canvas.src.js" />
+    <Content Include="Assets\graphs\js\modules\boost.js" />
+    <Content Include="Assets\graphs\js\modules\boost.src.js" />
+    <Content Include="Assets\graphs\js\modules\broken-axis.js" />
+    <Content Include="Assets\graphs\js\modules\broken-axis.src.js" />
+    <Content Include="Assets\graphs\js\modules\bullet.js" />
+    <Content Include="Assets\graphs\js\modules\bullet.src.js" />
+    <Content Include="Assets\graphs\js\modules\data.js" />
+    <Content Include="Assets\graphs\js\modules\data.src.js" />
+    <Content Include="Assets\graphs\js\modules\drag-panes.js" />
+    <Content Include="Assets\graphs\js\modules\drag-panes.src.js" />
+    <Content Include="Assets\graphs\js\modules\drilldown.js" />
+    <Content Include="Assets\graphs\js\modules\drilldown.src.js" />
+    <Content Include="Assets\graphs\js\modules\export-data.js" />
+    <Content Include="Assets\graphs\js\modules\export-data.src.js" />
+    <Content Include="Assets\graphs\js\modules\exporting.js" />
+    <Content Include="Assets\graphs\js\modules\exporting.src.js" />
+    <Content Include="Assets\graphs\js\modules\funnel.js" />
+    <Content Include="Assets\graphs\js\modules\funnel.src.js" />
+    <Content Include="Assets\graphs\js\modules\gantt.js" />
+    <Content Include="Assets\graphs\js\modules\gantt.src.js" />
+    <Content Include="Assets\graphs\js\modules\grid-axis.js" />
+    <Content Include="Assets\graphs\js\modules\grid-axis.src.js" />
+    <Content Include="Assets\graphs\js\modules\heatmap.js" />
+    <Content Include="Assets\graphs\js\modules\heatmap.src.js" />
+    <Content Include="Assets\graphs\js\modules\histogram-bellcurve.js" />
+    <Content Include="Assets\graphs\js\modules\histogram-bellcurve.src.js" />
+    <Content Include="Assets\graphs\js\modules\item-series.js" />
+    <Content Include="Assets\graphs\js\modules\item-series.src.js" />
+    <Content Include="Assets\graphs\js\modules\no-data-to-display.js" />
+    <Content Include="Assets\graphs\js\modules\no-data-to-display.src.js" />
+    <Content Include="Assets\graphs\js\modules\offline-exporting.js" />
+    <Content Include="Assets\graphs\js\modules\offline-exporting.src.js" />
+    <Content Include="Assets\graphs\js\modules\oldie.js" />
+    <Content Include="Assets\graphs\js\modules\oldie.src.js" />
+    <Content Include="Assets\graphs\js\modules\overlapping-datalabels.js" />
+    <Content Include="Assets\graphs\js\modules\overlapping-datalabels.src.js" />
+    <Content Include="Assets\graphs\js\modules\parallel-coordinates.js" />
+    <Content Include="Assets\graphs\js\modules\parallel-coordinates.src.js" />
+    <Content Include="Assets\graphs\js\modules\pareto.js" />
+    <Content Include="Assets\graphs\js\modules\pareto.src.js" />
+    <Content Include="Assets\graphs\js\modules\pattern-fill.js" />
+    <Content Include="Assets\graphs\js\modules\pattern-fill.src.js" />
+    <Content Include="Assets\graphs\js\modules\sankey.js" />
+    <Content Include="Assets\graphs\js\modules\sankey.src.js" />
+    <Content Include="Assets\graphs\js\modules\series-label.js" />
+    <Content Include="Assets\graphs\js\modules\series-label.src.js" />
+    <Content Include="Assets\graphs\js\modules\solid-gauge.js" />
+    <Content Include="Assets\graphs\js\modules\solid-gauge.src.js" />
+    <Content Include="Assets\graphs\js\modules\static-scale.js" />
+    <Content Include="Assets\graphs\js\modules\static-scale.src.js" />
+    <Content Include="Assets\graphs\js\modules\stock.js" />
+    <Content Include="Assets\graphs\js\modules\stock.src.js" />
+    <Content Include="Assets\graphs\js\modules\streamgraph.js" />
+    <Content Include="Assets\graphs\js\modules\streamgraph.src.js" />
+    <Content Include="Assets\graphs\js\modules\sunburst.js" />
+    <Content Include="Assets\graphs\js\modules\sunburst.src.js" />
+    <Content Include="Assets\graphs\js\modules\tilemap.js" />
+    <Content Include="Assets\graphs\js\modules\tilemap.src.js" />
+    <Content Include="Assets\graphs\js\modules\treemap.js" />
+    <Content Include="Assets\graphs\js\modules\treemap.src.js" />
+    <Content Include="Assets\graphs\js\modules\variable-pie.js" />
+    <Content Include="Assets\graphs\js\modules\variable-pie.src.js" />
+    <Content Include="Assets\graphs\js\modules\variwide.js" />
+    <Content Include="Assets\graphs\js\modules\variwide.src.js" />
+    <Content Include="Assets\graphs\js\modules\vector.js" />
+    <Content Include="Assets\graphs\js\modules\vector.src.js" />
+    <Content Include="Assets\graphs\js\modules\windbarb.js" />
+    <Content Include="Assets\graphs\js\modules\windbarb.src.js" />
+    <Content Include="Assets\graphs\js\modules\wordcloud.js" />
+    <Content Include="Assets\graphs\js\modules\wordcloud.src.js" />
+    <Content Include="Assets\graphs\js\modules\xrange.js" />
+    <Content Include="Assets\graphs\js\modules\xrange.src.js" />
+    <Content Include="Assets\graphs\js\themes\avocado.js" />
+    <Content Include="Assets\graphs\js\themes\avocado.src.js" />
+    <Content Include="Assets\graphs\js\themes\dark-blue.js" />
+    <Content Include="Assets\graphs\js\themes\dark-blue.src.js" />
+    <Content Include="Assets\graphs\js\themes\dark-green.js" />
+    <Content Include="Assets\graphs\js\themes\dark-green.src.js" />
+    <Content Include="Assets\graphs\js\themes\dark-unica.js" />
+    <Content Include="Assets\graphs\js\themes\dark-unica.src.js" />
+    <Content Include="Assets\graphs\js\themes\gray.js" />
+    <Content Include="Assets\graphs\js\themes\gray.src.js" />
+    <Content Include="Assets\graphs\js\themes\grid-light.js" />
+    <Content Include="Assets\graphs\js\themes\grid-light.src.js" />
+    <Content Include="Assets\graphs\js\themes\grid.js" />
+    <Content Include="Assets\graphs\js\themes\grid.src.js" />
+    <Content Include="Assets\graphs\js\themes\sand-signika.js" />
+    <Content Include="Assets\graphs\js\themes\sand-signika.src.js" />
+    <Content Include="Assets\graphs\js\themes\skies.js" />
+    <Content Include="Assets\graphs\js\themes\skies.src.js" />
+    <Content Include="Assets\graphs\js\themes\sunset.js" />
+    <Content Include="Assets\graphs\js\themes\sunset.src.js" />
+    <Content Include="Assets\graphs\lib\canvg.js" />
+    <Content Include="Assets\graphs\lib\canvg.src.js" />
+    <Content Include="Assets\graphs\lib\jspdf.js" />
+    <Content Include="Assets\graphs\lib\jspdf.src.js" />
+    <Content Include="Assets\graphs\lib\rgbcolor.js" />
+    <Content Include="Assets\graphs\lib\rgbcolor.src.js" />
+    <Content Include="Assets\graphs\lib\svg2pdf.js" />
+    <Content Include="Assets\graphs\lib\svg2pdf.src.js" />
+    <Content Include="Assets\graphs\modules\accessibility.js" />
+    <Content Include="Assets\graphs\modules\accessibility.src.js" />
+    <Content Include="Assets\graphs\modules\annotations.js" />
+    <Content Include="Assets\graphs\modules\annotations.src.js" />
+    <Content Include="Assets\graphs\modules\boost-canvas.js" />
+    <Content Include="Assets\graphs\modules\boost-canvas.src.js" />
+    <Content Include="Assets\graphs\modules\boost.js" />
+    <Content Include="Assets\graphs\modules\boost.src.js" />
+    <Content Include="Assets\graphs\modules\broken-axis.js" />
+    <Content Include="Assets\graphs\modules\broken-axis.src.js" />
+    <Content Include="Assets\graphs\modules\bullet.js" />
+    <Content Include="Assets\graphs\modules\bullet.src.js" />
+    <Content Include="Assets\graphs\modules\data.js" />
+    <Content Include="Assets\graphs\modules\data.src.js" />
+    <Content Include="Assets\graphs\modules\drag-panes.js" />
+    <Content Include="Assets\graphs\modules\drag-panes.src.js" />
+    <Content Include="Assets\graphs\modules\drilldown.js" />
+    <Content Include="Assets\graphs\modules\drilldown.src.js" />
+    <Content Include="Assets\graphs\modules\export-data.js" />
+    <Content Include="Assets\graphs\modules\export-data.src.js" />
+    <Content Include="Assets\graphs\modules\exporting.js" />
+    <Content Include="Assets\graphs\modules\exporting.src.js" />
+    <Content Include="Assets\graphs\modules\funnel.js" />
+    <Content Include="Assets\graphs\modules\funnel.src.js" />
+    <Content Include="Assets\graphs\modules\gantt.js" />
+    <Content Include="Assets\graphs\modules\gantt.src.js" />
+    <Content Include="Assets\graphs\modules\grid-axis.js" />
+    <Content Include="Assets\graphs\modules\grid-axis.src.js" />
+    <Content Include="Assets\graphs\modules\heatmap.js" />
+    <Content Include="Assets\graphs\modules\heatmap.src.js" />
+    <Content Include="Assets\graphs\modules\histogram-bellcurve.js" />
+    <Content Include="Assets\graphs\modules\histogram-bellcurve.src.js" />
+    <Content Include="Assets\graphs\modules\item-series.js" />
+    <Content Include="Assets\graphs\modules\item-series.src.js" />
+    <Content Include="Assets\graphs\modules\no-data-to-display.js" />
+    <Content Include="Assets\graphs\modules\no-data-to-display.src.js" />
+    <Content Include="Assets\graphs\modules\offline-exporting.js" />
+    <Content Include="Assets\graphs\modules\offline-exporting.src.js" />
+    <Content Include="Assets\graphs\modules\oldie.js" />
+    <Content Include="Assets\graphs\modules\oldie.src.js" />
+    <Content Include="Assets\graphs\modules\overlapping-datalabels.js" />
+    <Content Include="Assets\graphs\modules\overlapping-datalabels.src.js" />
+    <Content Include="Assets\graphs\modules\parallel-coordinates.js" />
+    <Content Include="Assets\graphs\modules\parallel-coordinates.src.js" />
+    <Content Include="Assets\graphs\modules\pareto.js" />
+    <Content Include="Assets\graphs\modules\pareto.src.js" />
+    <Content Include="Assets\graphs\modules\pattern-fill.js" />
+    <Content Include="Assets\graphs\modules\pattern-fill.src.js" />
+    <Content Include="Assets\graphs\modules\sankey.js" />
+    <Content Include="Assets\graphs\modules\sankey.src.js" />
+    <Content Include="Assets\graphs\modules\series-label.js" />
+    <Content Include="Assets\graphs\modules\series-label.src.js" />
+    <Content Include="Assets\graphs\modules\solid-gauge.js" />
+    <Content Include="Assets\graphs\modules\solid-gauge.src.js" />
+    <Content Include="Assets\graphs\modules\static-scale.js" />
+    <Content Include="Assets\graphs\modules\static-scale.src.js" />
+    <Content Include="Assets\graphs\modules\stock.js" />
+    <Content Include="Assets\graphs\modules\stock.src.js" />
+    <Content Include="Assets\graphs\modules\streamgraph.js" />
+    <Content Include="Assets\graphs\modules\streamgraph.src.js" />
+    <Content Include="Assets\graphs\modules\sunburst.js" />
+    <Content Include="Assets\graphs\modules\sunburst.src.js" />
+    <Content Include="Assets\graphs\modules\tilemap.js" />
+    <Content Include="Assets\graphs\modules\tilemap.src.js" />
+    <Content Include="Assets\graphs\modules\treemap.js" />
+    <Content Include="Assets\graphs\modules\treemap.src.js" />
+    <Content Include="Assets\graphs\modules\variable-pie.js" />
+    <Content Include="Assets\graphs\modules\variable-pie.src.js" />
+    <Content Include="Assets\graphs\modules\variwide.js" />
+    <Content Include="Assets\graphs\modules\variwide.src.js" />
+    <Content Include="Assets\graphs\modules\vector.js" />
+    <Content Include="Assets\graphs\modules\vector.src.js" />
+    <Content Include="Assets\graphs\modules\windbarb.js" />
+    <Content Include="Assets\graphs\modules\windbarb.src.js" />
+    <Content Include="Assets\graphs\modules\wordcloud.js" />
+    <Content Include="Assets\graphs\modules\wordcloud.src.js" />
+    <Content Include="Assets\graphs\modules\xrange.js" />
+    <Content Include="Assets\graphs\modules\xrange.src.js" />
+    <Content Include="Assets\graphs\readme.txt" />
+    <Content Include="Assets\graphs\themes\avocado.js" />
+    <Content Include="Assets\graphs\themes\avocado.src.js" />
+    <Content Include="Assets\graphs\themes\dark-blue.js" />
+    <Content Include="Assets\graphs\themes\dark-blue.src.js" />
+    <Content Include="Assets\graphs\themes\dark-green.js" />
+    <Content Include="Assets\graphs\themes\dark-green.src.js" />
+    <Content Include="Assets\graphs\themes\dark-unica.js" />
+    <Content Include="Assets\graphs\themes\dark-unica.src.js" />
+    <Content Include="Assets\graphs\themes\gray.js" />
+    <Content Include="Assets\graphs\themes\gray.src.js" />
+    <Content Include="Assets\graphs\themes\grid-light.js" />
+    <Content Include="Assets\graphs\themes\grid-light.src.js" />
+    <Content Include="Assets\graphs\themes\grid.js" />
+    <Content Include="Assets\graphs\themes\grid.src.js" />
+    <Content Include="Assets\graphs\themes\sand-signika.js" />
+    <Content Include="Assets\graphs\themes\sand-signika.src.js" />
+    <Content Include="Assets\graphs\themes\skies.js" />
+    <Content Include="Assets\graphs\themes\skies.src.js" />
+    <Content Include="Assets\graphs\themes\sunset.js" />
+    <Content Include="Assets\graphs\themes\sunset.src.js" />
+    <Content Include="Assets\Images\Antena.jpg" />
+    <Content Include="Assets\Images\antena.png" />
+    <Content Include="Assets\Images\sysarchitecture.png" />
+    <Content Include="Assets\js\bootstrap.bundle.js" />
+    <Content Include="Assets\js\bootstrap.bundle.min.js" />
+    <Content Include="Assets\js\bootstrap.js" />
+    <Content Include="Assets\js\bootstrap.min.js" />
+    <Content Include="Assets\js\breakpoints.min.js" />
+    <Content Include="Assets\js\browser.min.js" />
+    <Content Include="Assets\js\canvasjs.min.js" />
+    <Content Include="Assets\js\canvasjs.react.js" />
+    <Content Include="Assets\js\jquery-3.3.1.min.js" />
+    <Content Include="Assets\js\jquery.canvasjs.min.js" />
+    <Content Include="Assets\js\jquery.dropotron.min.js" />
+    <Content Include="Assets\js\main.js" />
+    <Content Include="Assets\js\util.js" />
+    <Content Include="Assets\tables\css\addons\datatables.css" />
+    <Content Include="Assets\tables\css\addons\datatables.min.css" />
+    <Content Include="Assets\tables\css\bootstrap.css" />
+    <Content Include="Assets\tables\css\bootstrap.min.css" />
+    <Content Include="Assets\tables\css\mdb.css" />
+    <Content Include="Assets\tables\css\mdb.min.css" />
+    <Content Include="Assets\tables\css\style.css" />
+    <Content Include="Assets\tables\css\style.min.css" />
+    <Content Include="Assets\tables\img\lightbox\default-skin.png" />
+    <Content Include="Assets\tables\img\lightbox\default-skin.svg" />
+    <Content Include="Assets\tables\img\lightbox\preloader.gif" />
+    <Content Include="Assets\tables\img\overlays\01.png" />
+    <Content Include="Assets\tables\img\overlays\02.png" />
+    <Content Include="Assets\tables\img\overlays\03.png" />
+    <Content Include="Assets\tables\img\overlays\04.png" />
+    <Content Include="Assets\tables\img\overlays\05.png" />
+    <Content Include="Assets\tables\img\overlays\06.png" />
+    <Content Include="Assets\tables\img\overlays\07.png" />
+    <Content Include="Assets\tables\img\overlays\08.png" />
+    <Content Include="Assets\tables\img\overlays\09.png" />
+    <Content Include="Assets\tables\img\svg\arrow_left.svg" />
+    <Content Include="Assets\tables\img\svg\arrow_right.svg" />
+    <Content Include="Assets\tables\index.html" />
+    <Content Include="Assets\tables\js\addons\datatables.js" />
+    <Content Include="Assets\tables\js\addons\datatables.min.js" />
+    <Content Include="Assets\tables\js\bootstrap.js" />
+    <Content Include="Assets\tables\js\bootstrap.min.js" />
+    <Content Include="Assets\tables\js\jquery-3.3.1.min.js" />
+    <Content Include="Assets\tables\js\mdb.js" />
+    <Content Include="Assets\tables\js\mdb.min.js" />
+    <Content Include="Assets\tables\js\popper.min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\js\esm\popper-utils.js" />
+    <Content Include="Assets\js\esm\popper-utils.min.js" />
+    <Content Include="Assets\js\esm\popper.js" />
+    <Content Include="Assets\js\esm\popper.min.js" />
+    <Content Include="Assets\js\esm\popper.min.js.map" />
+    <Content Include="Assets\js\esm\popper.js.map" />
+    <Content Include="Assets\js\esm\popper-utils.min.js.map" />
+    <Content Include="Assets\js\esm\popper-utils.js.map" />
+    <Content Include="Assets\css\.DS_Store" />
+    <Content Include="Assets\css\bootstrap-grid.css.map" />
+    <Content Include="Assets\css\bootstrap-grid.min.css.map" />
+    <Content Include="Assets\css\bootstrap-reboot.css.map" />
+    <Content Include="Assets\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Assets\css\bootstrap.css.map" />
+    <Content Include="Assets\css\bootstrap.min.css.map" />
+    <Content Include="Assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Assets\fonts\FontAwesome.otf" />
+    <Content Include="Assets\js\bootstrap.bundle.js.map" />
+    <Content Include="Assets\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Assets\js\bootstrap.js.map" />
+    <Content Include="Assets\js\bootstrap.min.js.map" />
+    <Content Include="Assets\sass\libs\_breakpoints.scss" />
+    <Content Include="Assets\sass\libs\_functions.scss" />
+    <Content Include="Assets\sass\libs\_html-grid.scss" />
+    <Content Include="Assets\sass\libs\_mixins.scss" />
+    <Content Include="Assets\sass\libs\_vars.scss" />
+    <Content Include="Assets\sass\libs\_vendor.scss" />
+    <Content Include="Assets\sass\main.scss" />
+    <Content Include="Assets\graphs\css\highcharts.scss" />
+    <Content Include="Assets\graphs\highcharts-3d.js.map" />
+    <Content Include="Assets\graphs\highcharts-more.js.map" />
+    <Content Include="Assets\graphs\highcharts.js.map" />
+    <Content Include="Assets\graphs\js\highcharts-3d.js.map" />
+    <Content Include="Assets\graphs\js\highcharts-more.js.map" />
+    <Content Include="Assets\graphs\js\highcharts.js.map" />
+    <Content Include="Assets\graphs\js\modules\accessibility.js.map" />
+    <Content Include="Assets\graphs\js\modules\annotations.js.map" />
+    <Content Include="Assets\graphs\js\modules\boost-canvas.js.map" />
+    <Content Include="Assets\graphs\js\modules\boost.js.map" />
+    <Content Include="Assets\graphs\js\modules\broken-axis.js.map" />
+    <Content Include="Assets\graphs\js\modules\bullet.js.map" />
+    <Content Include="Assets\graphs\js\modules\data.js.map" />
+    <Content Include="Assets\graphs\js\modules\drag-panes.js.map" />
+    <Content Include="Assets\graphs\js\modules\drilldown.js.map" />
+    <Content Include="Assets\graphs\js\modules\export-data.js.map" />
+    <Content Include="Assets\graphs\js\modules\exporting.js.map" />
+    <Content Include="Assets\graphs\js\modules\funnel.js.map" />
+    <Content Include="Assets\graphs\js\modules\gantt.js.map" />
+    <Content Include="Assets\graphs\js\modules\grid-axis.js.map" />
+    <Content Include="Assets\graphs\js\modules\heatmap.js.map" />
+    <Content Include="Assets\graphs\js\modules\histogram-bellcurve.js.map" />
+    <Content Include="Assets\graphs\js\modules\item-series.js.map" />
+    <Content Include="Assets\graphs\js\modules\no-data-to-display.js.map" />
+    <Content Include="Assets\graphs\js\modules\offline-exporting.js.map" />
+    <Content Include="Assets\graphs\js\modules\oldie.js.map" />
+    <Content Include="Assets\graphs\js\modules\overlapping-datalabels.js.map" />
+    <Content Include="Assets\graphs\js\modules\parallel-coordinates.js.map" />
+    <Content Include="Assets\graphs\js\modules\pareto.js.map" />
+    <Content Include="Assets\graphs\js\modules\pattern-fill.js.map" />
+    <Content Include="Assets\graphs\js\modules\sankey.js.map" />
+    <Content Include="Assets\graphs\js\modules\series-label.js.map" />
+    <Content Include="Assets\graphs\js\modules\solid-gauge.js.map" />
+    <Content Include="Assets\graphs\js\modules\static-scale.js.map" />
+    <Content Include="Assets\graphs\js\modules\stock.js.map" />
+    <Content Include="Assets\graphs\js\modules\streamgraph.js.map" />
+    <Content Include="Assets\graphs\js\modules\sunburst.js.map" />
+    <Content Include="Assets\graphs\js\modules\tilemap.js.map" />
+    <Content Include="Assets\graphs\js\modules\treemap.js.map" />
+    <Content Include="Assets\graphs\js\modules\variable-pie.js.map" />
+    <Content Include="Assets\graphs\js\modules\variwide.js.map" />
+    <Content Include="Assets\graphs\js\modules\vector.js.map" />
+    <Content Include="Assets\graphs\js\modules\windbarb.js.map" />
+    <Content Include="Assets\graphs\js\modules\wordcloud.js.map" />
+    <Content Include="Assets\graphs\js\modules\xrange.js.map" />
+    <Content Include="Assets\graphs\js\themes\avocado.js.map" />
+    <Content Include="Assets\graphs\js\themes\dark-blue.js.map" />
+    <Content Include="Assets\graphs\js\themes\dark-green.js.map" />
+    <Content Include="Assets\graphs\js\themes\dark-unica.js.map" />
+    <Content Include="Assets\graphs\js\themes\gray.js.map" />
+    <Content Include="Assets\graphs\js\themes\grid-light.js.map" />
+    <Content Include="Assets\graphs\js\themes\grid.js.map" />
+    <Content Include="Assets\graphs\js\themes\sand-signika.js.map" />
+    <Content Include="Assets\graphs\js\themes\skies.js.map" />
+    <Content Include="Assets\graphs\js\themes\sunset.js.map" />
+    <Content Include="Assets\graphs\modules\accessibility.js.map" />
+    <Content Include="Assets\graphs\modules\annotations.js.map" />
+    <Content Include="Assets\graphs\modules\boost-canvas.js.map" />
+    <Content Include="Assets\graphs\modules\boost.js.map" />
+    <Content Include="Assets\graphs\modules\broken-axis.js.map" />
+    <Content Include="Assets\graphs\modules\bullet.js.map" />
+    <Content Include="Assets\graphs\modules\data.js.map" />
+    <Content Include="Assets\graphs\modules\drag-panes.js.map" />
+    <Content Include="Assets\graphs\modules\drilldown.js.map" />
+    <Content Include="Assets\graphs\modules\export-data.js.map" />
+    <Content Include="Assets\graphs\modules\exporting.js.map" />
+    <Content Include="Assets\graphs\modules\funnel.js.map" />
+    <Content Include="Assets\graphs\modules\gantt.js.map" />
+    <Content Include="Assets\graphs\modules\grid-axis.js.map" />
+    <Content Include="Assets\graphs\modules\heatmap.js.map" />
+    <Content Include="Assets\graphs\modules\histogram-bellcurve.js.map" />
+    <Content Include="Assets\graphs\modules\item-series.js.map" />
+    <Content Include="Assets\graphs\modules\no-data-to-display.js.map" />
+    <Content Include="Assets\graphs\modules\offline-exporting.js.map" />
+    <Content Include="Assets\graphs\modules\oldie.js.map" />
+    <Content Include="Assets\graphs\modules\overlapping-datalabels.js.map" />
+    <Content Include="Assets\graphs\modules\parallel-coordinates.js.map" />
+    <Content Include="Assets\graphs\modules\pareto.js.map" />
+    <Content Include="Assets\graphs\modules\pattern-fill.js.map" />
+    <Content Include="Assets\graphs\modules\sankey.js.map" />
+    <Content Include="Assets\graphs\modules\series-label.js.map" />
+    <Content Include="Assets\graphs\modules\solid-gauge.js.map" />
+    <Content Include="Assets\graphs\modules\static-scale.js.map" />
+    <Content Include="Assets\graphs\modules\stock.js.map" />
+    <Content Include="Assets\graphs\modules\streamgraph.js.map" />
+    <Content Include="Assets\graphs\modules\sunburst.js.map" />
+    <Content Include="Assets\graphs\modules\tilemap.js.map" />
+    <Content Include="Assets\graphs\modules\treemap.js.map" />
+    <Content Include="Assets\graphs\modules\variable-pie.js.map" />
+    <Content Include="Assets\graphs\modules\variwide.js.map" />
+    <Content Include="Assets\graphs\modules\vector.js.map" />
+    <Content Include="Assets\graphs\modules\windbarb.js.map" />
+    <Content Include="Assets\graphs\modules\wordcloud.js.map" />
+    <Content Include="Assets\graphs\modules\xrange.js.map" />
+    <Content Include="Assets\graphs\themes\avocado.js.map" />
+    <Content Include="Assets\graphs\themes\dark-blue.js.map" />
+    <Content Include="Assets\graphs\themes\dark-green.js.map" />
+    <Content Include="Assets\graphs\themes\dark-unica.js.map" />
+    <Content Include="Assets\graphs\themes\gray.js.map" />
+    <Content Include="Assets\graphs\themes\grid-light.js.map" />
+    <Content Include="Assets\graphs\themes\grid.js.map" />
+    <Content Include="Assets\graphs\themes\sand-signika.js.map" />
+    <Content Include="Assets\graphs\themes\skies.js.map" />
+    <Content Include="Assets\graphs\themes\sunset.js.map" />
+    <None Include="Assets\js\jquery-3.3.1.intellisense.js" />
+    <Content Include="Assets\js\jquery-3.3.1.js" />
+    <Content Include="Assets\js\jquery-3.3.1.slim.js" />
+    <Content Include="Assets\js\jquery-3.3.1.slim.min.js" />
+    <None Include="Assets\js\jquery.validate-vsdoc.js" />
+    <Content Include="Assets\js\jquery.validate.js" />
+    <Content Include="Assets\js\jquery.validate.min.js" />
+    <Content Include="Assets\js\jquery.validate.unobtrusive.js" />
+    <Content Include="Assets\js\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Assets\js\modernizr-2.8.3.js" />
+    <Content Include="Assets\js\popper-utils.js" />
+    <Content Include="Assets\js\popper-utils.min.js" />
+    <Content Include="Assets\js\popper.js" />
+    <Content Include="Assets\js\popper.min.js" />
+    <Content Include="Assets\js\umd\popper-utils.js" />
+    <Content Include="Assets\js\umd\popper-utils.min.js" />
+    <Content Include="Assets\js\umd\popper.js" />
+    <Content Include="Assets\js\umd\popper.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Assets\js\umd\popper.min.js.map" />
+    <Content Include="Assets\js\umd\popper.js.map" />
+    <Content Include="Assets\js\umd\popper-utils.min.js.map" />
+    <Content Include="Assets\js\umd\popper-utils.js.map" />
+    <Content Include="Assets\js\README.md" />
+    <Content Include="Assets\js\popper.min.js.map" />
+    <Content Include="Assets\js\popper.js.map" />
+    <Content Include="Assets\js\popper-utils.min.js.map" />
+    <Content Include="Assets\js\popper-utils.js.map" />
+    <Content Include="Views\Administrador\Create.cshtml" />
+    <Content Include="Views\Administrador\Delete.cshtml" />
+    <Content Include="Views\Administrador\Details.cshtml" />
+    <Content Include="Views\Administrador\Edit.cshtml" />
+    <Content Include="Views\Administrador\Index.cshtml" />
+    <Content Include="Views\Institucion\Create.cshtml" />
+    <Content Include="Views\Institucion\Delete.cshtml" />
+    <Content Include="Views\Institucion\Details.cshtml" />
+    <Content Include="Views\Institucion\Edit.cshtml" />
+    <Content Include="Views\Institucion\Index.cshtml" />
+    <Content Include="Views\Experimento\Create.cshtml" />
+    <Content Include="Views\Experimento\Delete.cshtml" />
+    <Content Include="Views\Experimento\Details.cshtml" />
+    <Content Include="Views\Experimento\Edit.cshtml" />
+    <Content Include="Views\Experimento\Index.cshtml" />
+    <Content Include="Views\Vuelo\Create.cshtml" />
+    <Content Include="Views\Vuelo\Delete.cshtml" />
+    <Content Include="Views\Vuelo\Details.cshtml" />
+    <Content Include="Views\Vuelo\Edit.cshtml" />
+    <Content Include="Views\Vuelo\Index.cshtml" />
+    <Content Include="Views\ConfiguracionVuelo\Index.cshtml" />
+    <Content Include="Views\HistoricoVuelo\Index.cshtml" />
+    <Content Include="Views\VueloInstitucionExperimento\Create.cshtml" />
+    <Content Include="Views\VueloInstitucionExperimento\Delete.cshtml" />
+    <Content Include="Views\VueloInstitucionExperimento\Details.cshtml" />
+    <Content Include="Views\VueloInstitucionExperimento\Edit.cshtml" />
+    <Content Include="Views\VueloInstitucionExperimento\Index.cshtml" />
+    <Content Include="Views\Home\Inicio_Sesion.cshtml" />
+    <Content Include="Views\VisualizacionVuelo\Index.cshtml" />
+    <Content Include="Views\Test\VueloCompleto.cshtml" />
+    <Content Include="Views\HistoricoVuelo\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\tables\font\roboto\Roboto-Bold.eot" />
+    <Content Include="Assets\tables\font\roboto\Roboto-Bold.ttf" />
+    <Content Include="Assets\tables\font\roboto\Roboto-Bold.woff" />
+    <Content Include="Assets\tables\font\roboto\Roboto-Bold.woff2" />
+    <Content Include="Assets\tables\font\roboto\Roboto-Light.eot" />
+    <Content Include="Assets\tables\font\roboto\Roboto-Light.ttf" />
+    <Content Include="Assets\tables\font\roboto\Roboto-Light.woff" />
+    <Content Include="Assets\tables\font\roboto\Roboto-Light.woff2" />
+    <Content Include="Assets\tables\font\roboto\Roboto-Medium.eot" />
+    <Content Include="Assets\tables\font\roboto\Roboto-Medium.ttf" />
+    <Content Include="Assets\tables\font\roboto\Roboto-Medium.woff" />
+    <Content Include="Assets\tables\font\roboto\Roboto-Medium.woff2" />
+    <Content Include="Assets\tables\font\roboto\Roboto-Regular.eot" />
+    <Content Include="Assets\tables\font\roboto\Roboto-Regular.ttf" />
+    <Content Include="Assets\tables\font\roboto\Roboto-Regular.woff" />
+    <Content Include="Assets\tables\font\roboto\Roboto-Regular.woff2" />
+    <Content Include="Assets\tables\font\roboto\Roboto-Thin.eot" />
+    <Content Include="Assets\tables\font\roboto\Roboto-Thin.ttf" />
+    <Content Include="Assets\tables\font\roboto\Roboto-Thin.woff" />
+    <Content Include="Assets\tables\font\roboto\Roboto-Thin.woff2" />
+    <None Include="packages.config" />
+    <Content Include="Assets\js\jquery-3.3.1.slim.min.map" />
+    <Content Include="Assets\js\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Assets\js\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201809260239201_InitialCreate.resx">
+      <DependentUpon>201809260239201_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64667</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64667/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.9.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.9.0\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

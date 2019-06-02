@@ -1,0 +1,34 @@
+﻿@model Andromeda_v2.Models.Experimento
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Experimento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Objetivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Objetivo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ExperimentoID }) |
+    @Html.ActionLink("Regresar a listado", "Index")
+</p>

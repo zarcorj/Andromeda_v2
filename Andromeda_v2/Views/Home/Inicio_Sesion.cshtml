@@ -1,0 +1,81 @@
+﻿@model  Andromeda_v2.Models.Administrador
+
+@{
+	ViewBag.Title = "Inicio_Sesion";
+}
+
+@*
+	<input id="Email" name="Email" value="@Model.Email" hidden />
+	<input id="Nombre" name="Nombre" value="@Model.Nombre" hidden />
+	<input id="Contraseña" name="Contraseña" value="@Model.Contraseña" hidden />
+*@
+
+@if (Model != null)
+{
+	<input id="Nombre" name="Nombre" value="@Model.Nombre" hidden />
+}
+
+<div class="container" style="margin-top: 70px">
+	<div class="card">
+		@using (Html.BeginForm())
+		{
+			@Html.AntiForgeryToken()
+			<div class="form-signin text-center" id="loginForm">
+				<img class="mb-4" src="http://www.pngmart.com/files/3/Antenna-PNG-HD.png" alt="" width="92" height="92">
+				<h1 class="h3 mb-3 font-weight-normal">¡Inicie Sesión!</h1>
+				<input type="email" id="Email" name="Email" class="form-control" placeholder="Correo electrónico" required autofocus>
+				<input type="password" id="Contrase_a" name="Contraseña" class="form-control" placeholder="Contraseña" required>
+				<div class="form-group">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="Recordarme">
+						<label class="form-check-label" for="recordarme">Recordarme</label>
+						<div class="lead">
+							<p class="text-info" onmouseover=""><small href="#" data-toggle="modal" data-target="#exampleModal"><a>¿Olvidaste tu contraseña?</a></small></p>
+						</div>
+					</div>
+				</div>
+				<br /><button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar sesión</button>
+				<p class="mt-5 mb-3 text-muted">&copy; Proyecto Terminal 2018</p>
+			</div>
+		}
+	</div>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exapleModalLabel">Cambiar Contraseña</h5>
+			</div>
+			<div class="modal-body">
+				<form>
+					<small>
+						<label class="col-form-label">¿Has olvidado tu contraseña? </label>
+						<label class="col-form-label">Indícanos tu email y te mandaremos un link para reestablecerla</label>
+					</small>
+					<input type="email" id="resetEmail" class="form-control" placeholder="Correo electrónico" required autofocus>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+				<button type="button" class="btn btn-info">Restablecer</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+@section Scripts
+{
+	<script type="text/javascript">
+		$(document).ready(function () {
+			alert($("#Nombre").val());
+		});
+
+		$('#exampleModal').on('hidden.bs.modal', function (event) {
+			alert("¡Por favor inicie sesión!")
+		});
+
+							//<form class="form-signin text-center" id="loginForm">
+	</script>
+}

@@ -1,0 +1,128 @@
+﻿@model Andromeda_v2.Models.Vuelo
+
+@{
+	ViewBag.Title = "Configuración de vuelo";
+}
+
+@using (Html.BeginForm("crearVuelo", "ConfiguracionVuelo"))
+{
+	@Html.AntiForgeryToken()
+	<div class="container">
+		<h3 style="text-align:center; margin-top:15px">Configuración de vuelo</h3>
+		<div class="card mb-12 box-shadow">
+			<div class="card-body">
+				<hr />
+				@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+				<div class="form-group row">
+					<label for="Administradores" class="col-sm-2 col-form-label">Administrador</label>
+					<div class="col-sm-10">
+						@Html.DropDownList("Administrador", null, htmlAttributes: new { @class = "form-control" })
+						<input id="AdministradorID" name="AdministradorID" hidden />
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="" class="col-sm-2 col-form-label">Nombre</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="e.g. Vuelo Zacatenco" required autofocus>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="ObjetivoDeVuelo" class="col-sm-2 col-form-label">Objetivo</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="Objetivo" name="Objetivo" placeholder="e.g. Evaluar el entorno..." required>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="Ubicacion" class="col-sm-2 col-form-label">Ubicación</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="Ubicacion" name="Ubicacion" placeholder="e.g. ESIME Zacatenco - IPN" required>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="fecha" class="col-sm-2 col-form-label">Fecha</label>
+					<div class="col-sm-10">
+						<input type="date" class="form-control" id="Fecha" name="Fecha">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="plataformaVuelo" class="col-sm-2 col-form-label">Plataforma</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="Plataforma" name="Plataforma" placeholder="e.g. SADM 1" required>
+					</div>
+				</div>
+				<hr>
+				<div class="form-group row">
+					<label for="instituciones" class="col-sm-2 col-form-label">Institución</label>
+					<div class="col-sm-8">
+						@Html.DropDownList("Institucion", null, htmlAttributes: new { @class = "form-control" })
+						<input id="InstitucionID" name="InstitucionID" hidden />
+					</div>
+					<div class="col-sm-2">
+						<a href="/Institucion/Create" class="btn btn-success">Agregar</a>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="experimentos" class="col-sm-2 col-form-label">Experimento</label>
+					<div class="col-sm-8">
+						<select id="Experimento" name="Experimento" class="form-control">
+							@foreach (var item in ViewBag.Experimento)
+							{
+								<option value=@item.ExperimentoID>@item.Nombre</option>
+							}
+						</select>
+						@*
+							@Html.DropDownList("Experimentos", null, htmlAttributes: new { @class = "form-control" })
+						*@
+						<input id="ExperimentoID" name="ExperimentoID" hidden />
+					</div>
+					<div class="col-sm-2">
+						<a href="/Experimento/Create" class="btn btn-success">Agregar</a>
+					</div>
+				</div>
+
+				<div class="row" style="margin-top: 1px">
+					<div class="col-md-3"></div>
+					<div class="col-md-3">
+
+					</div>
+					<div class="col-md-3">
+						<input type="submit" value="Crear Vuelo" class="btn btn-primary btn-block" />
+					</div>
+					<div class="col-md-3"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+}
+
+@section Scripts
+{
+	<script type="text/javascript">
+		//Inicializamos valor de input (hidden) para Administrador
+		$("#AdministradorID").val($("#Administrador").val())
+		console.log("Administrador: " + $("#AdministradorID").val());
+		//Inicializamos valor de input (hidden) para Institucion
+		$("#InstitucionID").val($("#Institucion").val())
+		console.log("Institucion: " + $("#InstitucionID").val());
+		//Inicializamos valor de input (hidden) para Experimento
+		$("#ExperimentoID").val($("#Experimento").val())
+		console.log("Experimento: " + $("#ExperimentoID").val());
+
+
+		$("#Administrador").change(function () {
+			$("#AdministradorID").val($("#Administrador").val());
+			console.log("Administrador: " + $("#AdministradorID").val());
+		})
+
+		$("#Institucion").change(function () {
+			$("#InstitucionID").val($("#Institucion").val());
+			console.log("Institucion: " + $("#InstitucionID").val());
+		})
+
+		$("#Experimento").change(function () {
+			$("#ExperimentoID").val($("#Experimento").val());
+			console.log("Experimento: " + $("#ExperimentoID").val());
+		})
+	</script>
+}
